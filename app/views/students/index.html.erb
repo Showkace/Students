@@ -1,0 +1,28 @@
+<h1>Listing Students</h1>
+
+<%= link_to 'New student', new_student_path %>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Weight</th>
+    <th>Height</th>
+    <th>colour</th>
+    <th>GPA</th>
+    <th colspan="3"></th>
+  </tr>
+
+  <% @students.each do |student| %>
+    <tr>
+      <td><%= student.Name %></td>
+      <td><%= student.Weight %></td>
+      <td><%= student.Height %></td>
+      <td><%= student.colour %></td>
+      <td><%= student.GPA %></td>
+      <td><%= link_to 'Show', student_path(student) %></td>
+     <td><%= link_to 'Edit', edit_student_path(student) %></td>
+     <td><%= link_to 'Destroy', student_path(student),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>

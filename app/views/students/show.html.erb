@@ -1,0 +1,12 @@
+<%= stylesheet_link_tag "calculator.css" %>
+
+
+  <% @students.each do |student| %>
+  <div id="box_display" style="width:<%= student.Weight %>px; height:<%= student.Height %>px">
+      <p style="color:<%= student.colour %>"><%= student.Name %></p>
+      <p><%= student.GPA %></p>
+    </div>
+  <% end %>
+
+
+<%= link_to 'Back', students_path %>
